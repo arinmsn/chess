@@ -1,13 +1,13 @@
 // xP = Pawn, xN = Knight, xR = Rook, wB = Bishop, wQ = Queen, wK = King
-const PIECES = { EMPTY:0, wP:1, wN:2, wB:3, wR:4, wQ:5, wK:6, bP:7, bN:8, bB:9, bR:10, bQ:11, bK:12 };
+const PIECES = {EMPTY:0, wP:1, wN:2, wB:3, wR:4, wQ:5, wK:6, bP:7, bN:8, bB:9, bR:10, bQ:11, bK:12};
 
 // Define # of squares on board
-let BRD_SQ_NUM = 120;
+var BRD_SQ_NUM = 120;
 
-let FILES = { FILE_A:0, FILE_B:1, FILE_C:2, FILE_D:3,
+var FILES = { FILE_A:0, FILE_B:1, FILE_C:2, FILE_D:3,
     FILE_E:4, FILE_F:5, FILE_G:6, FILE_H:7, FILE_NONE:8 };
 
-let RANKS = { RANK_1:0, RANK_2:1, RANK_3:2, RANK_4:3,
+var RANKS = { RANK_1:0, RANK_2:1, RANK_3:2, RANK_4:3,
     RANK_5:4, RANK_6:5, RANK_7:6, RANK_8:7, RANK_NONE:8 };
 
 // Flipping colors side ^= 1;
@@ -17,3 +17,13 @@ const SQUARES = {A1:21, B1:22, C1:23, D1:24, E1:25, F1:26, G1:27, H1:28,
     A8:91, B8:92, C8:93, D8:94, E8:95, F8:96, G8:97, H8:98, NO_SQ:99, OFFBOARD:100};
 
 const BOOL = {FALSE:0, TRUE:1};
+
+// File & Rank Arrays
+var FilesBrd = new Array(BRD_SQ_NUM); 
+var RankBrd = new Array(BRD_SQ_NUM);
+
+// e.g. File 0 & Rank 0 will give us 21. 
+// Likewise File 0 & Rank 1 will give us 31.
+function FR25Q(f, r) {
+    return( (21 + (f)) + ( (r) * 10) );
+}
